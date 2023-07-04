@@ -17,6 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from students.views import StudentsAPIView
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+    path('api/v1/studentslist/', StudentsAPIView.as_view()),
+    path('api/v1/studentslist/<int:student_id>', StudentsAPIView.as_view())
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
