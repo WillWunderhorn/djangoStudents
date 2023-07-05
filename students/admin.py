@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from students.model.models import Students
+from students.entity.students import Students
 
 
 class Admin(admin.ModelAdmin):
@@ -14,5 +14,4 @@ class Admin(admin.ModelAdmin):
     preview.short_description = 'Profile Image'
 
 
-# Register your models here.
 admin.site.register(Students, Admin)

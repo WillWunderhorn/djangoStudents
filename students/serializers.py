@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from students.model.models import Students
+from students.entity.students import Students
 
 
 class StudentsSerializer(serializers.ModelSerializer):

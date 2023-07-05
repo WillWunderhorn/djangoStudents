@@ -2,9 +2,8 @@ from django.forms import model_to_dict
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from students.model.models import Students
+from students.entity.students import Students
 from rest_framework import status
-from rest_framework.parsers import FileUploadParser
 
 
 class StudentsAPIView(APIView):
@@ -75,7 +74,3 @@ class StudentsAPIView(APIView):
         student.delete()
 
         return Response({'patch': model_to_dict(student)})
-
-# class StudentsAPIView(generics.ListAPIView):
-#     queryset = Students.objects.all()
-#     serializer_class = StudentsSerializer
